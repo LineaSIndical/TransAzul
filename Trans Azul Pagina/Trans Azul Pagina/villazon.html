@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Villazón | Trans Azul Bolivia</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="redes-sociales"><a href="#" class="facebook">f</a><a href="#" class="tiktok">♪</a><a href="#" class="instagram">◎</a></div>
+<div class="sidebar"><div class="logo"><img src="img/logotipovip.png"></div><div class="logo"><img src="img/logoTransAzul.png"></div>
+<nav><a href="index.html">🏠 Inicio</a><a href="viajes.html" class="active">🚌 Viajes</a><a href="galeria.html">📸 Galería</a><a href="horarios.html">🕒 Horarios</a><a href="sobrenosotros.html">📞 Sobre nosotros</a></nav></div>
+<div class="main">
+<div class="header fade-in"><h1>Villazón</h1><p>Puerta de entrada a la frontera con Argentina.</p></div>
+<div class="hero-tupiza fade-in"><img src="https://media-cdn.tripadvisor.com/media/photo-s/0b/67/1e/13/municipalidad-de-villazon.jpg" alt="Villazón"><div class="hero-overlay"></div><div class="hero-text"><h3>TRANS AZUL BOLIVIA</h3><h2>VILLAZÓN</h2><p>Conexión directa con la frontera, comercio y cultura del sur boliviano.</p></div></div>
+<div class="section fade-in"><h2>Conoce Villazón</h2><p>Villazón es la ciudad fronteriza más importante del sur de Bolivia, conectada con La Quiaca (Argentina). Punto estratégico de comercio y tránsito internacional.</p></div>
+<div class="section fade-in"><h2>Lugares turísticos</h2><div class="grid">
+<div class="card"><img src="https://media-cdn.tripadvisor.com/media/photo-s/0b/67/1e/13/municipalidad-de-villazon.jpg" alt="Plaza Central"><h3>Plaza Central</h3><p>Centro de la ciudad, punto de encuentro fronterizo.</p><button onclick="window.open('https://www.google.com/maps/search/?api=1&query=Villazon+Plaza+Central+Bolivia','_blank')">📍 Observar destino</button></div>
+<div class="card"><img src="img/Quebrada-de-Palala.jpg" alt="Frontera"><h3>Puente Internacional</h3><p>Conexión entre Villazón y La Quiaca, Argentina.</p><button onclick="window.open('https://www.google.com/maps/search/?api=1&query=Puente+Internacional+Villazon+La+Quiaca','_blank')">📍 Observar destino</button></div>
+<div class="card"><img src="img/El-Sillar-Tupiza.jpg" alt="Mercado"><h3>Mercado Fronterizo</h3><p>Comercio intenso y productos de ambos países.</p><button onclick="window.open('https://www.google.com/maps/search/?api=1&query=Mercado+Villazon+Bolivia','_blank')">📍 Observar destino</button></div>
+</div></div>
+<footer><p>© 2026 Trans Azul Bolivia</p></footer>
+</div>
+<script>const els=document.querySelectorAll('.fade-in');const ob=new IntersectionObserver((e)=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible');})},{threshold:0.15});els.forEach(el=>ob.observe(el));</script>
+</body>
+</html>
