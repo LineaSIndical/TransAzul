@@ -1,0 +1,211 @@
+/* =========================
+   TRANS AZUL BOLIVIA - MI CSS FINAL
+   Imanol Raul Perez Lozano - Proyecto Trans Azul
+   Lo hice yo para mi página
+   ========================= */
+
+/* Estos son mis colores, los puse yo aquí arriba para no estar buscando cada rato */
+:root{
+    --azul:#071b4d; /* este azul es del logo, el principal */
+    --azul2:#0d347f; /* este lo uso para el degradado del menú */
+    --azul3:#1d5dcc; /* este es más clarito, para cuando paso el mouse */
+    --rojo:#c92835; /* rojo de las alas del águila */
+    --dorado:#d4af37; /* doradito para los bordes */
+    --blanco:#ffffff;
+    --gris:#f3f5f8; /* fondo de toda mi página, lo puse clarito */
+    --texto:#30343b;
+}
+
+/* Esto lo pongo siempre, para que no se me desborde nada */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',Arial,sans-serif;
+}
+html{scroll-behavior:smooth;} /* esto lo puse para que baje suavecito cuando hago clic */
+body{background:var(--gris); color:var(--texto);}
+
+/* ===== ESTO ES MI MENÚ LATERAL, DONDE PUSE MIS EMOJIS ===== */
+/* Aquí puse mi menú con 🏠 Inicio, 🚌 Viajes, 📸 Galería, etc. */
+.sidebar{
+    position:fixed; /* lo dejé fijo para que no se mueva cuando bajo */
+    left:0; top:0;
+    width:270px;
+    height:100vh;
+    background:linear-gradient(180deg,var(--azul),var(--azul2)); /* degradado azul que hice yo */
+    box-shadow:5px 0 25px rgba(0,0,0,.18);
+    border-right:3px solid var(--dorado); /* borde dorado que le puse yo */
+    z-index:1000;
+}
+.logo{
+    text-align:center;
+    padding:20px 15px;
+    border-bottom:1px solid rgba(255,255,255,.15);
+}
+.logo img{
+    width:150px;
+    max-height:95px;
+    object-fit:contain; /* esto lo puse para que mi logo VIP no se deforme, ¿no ve? */
+}
+.sidebar nav{margin-top:20px;}
+.sidebar a{
+    display:flex;
+    align-items:center;
+    color:white;
+    text-decoration:none;
+    padding:15px 22px;
+    margin:7px 14px;
+    border-radius:10px;
+    font-size:16px;
+    transition:.3s;
+}
+.sidebar a:hover{
+    background:rgba(255,255,255,.12);
+    transform:translateX(5px); /* esto hace que se mueva poquito cuando paso el mouse, lo puse yo */
+    border-left:4px solid var(--dorado);
+}
+.sidebar a.active{
+    background:rgba(255,255,255,.15);
+    border-left:4px solid var(--dorado); /* esto es para marcar donde estoy, yo lo puse así */
+}
+
+/* ===== ESTO ES DONDE VA TODO MI CONTENIDO, LO SEPARÉ DEL MENÚ ===== */
+.main{margin-left:270px; padding:30px 40px;}
+
+/* Este es mi encabezado, le puse borde rojo arriba y a la izquierda */
+.header{
+    background:white;
+    padding:28px 35px;
+    border-radius:14px;
+    border-left:6px solid var(--rojo);
+    border-top:6px solid var(--rojo);
+    box-shadow:0 5px 20px rgba(0,0,0,.07);
+}
+.header h1{color:var(--azul); font-size:38px; font-weight:700;}
+.header p{margin-top:7px; color:#6b7280; font-size:17px;}
+
+/* ===== ESTO ES MI BANNER GRANDE DE INICIO, LA FOTO GRANDE ===== */
+.banner{margin-top:25px; position:relative;}
+.banner img{width:100%; height:500px; object-fit:cover; border-radius:20px; display:block;}
+.overlay{
+    position:absolute; top:0; left:0; width:100%; height:100%;
+    background:linear-gradient(rgba(8,32,92,.6), rgba(214,61,61,.4)); /* capa oscura que le puse yo para que se lea el texto */
+    border-radius:20px;
+}
+.banner-text{
+    position:absolute; top:50%; left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center; color:white;
+}
+.banner-text h2{font-size:50px;}
+.banner-text p{font-size:20px; margin-top:10px;}
+.btn{
+    display:inline-block; margin-top:20px;
+    background:linear-gradient(90deg,var(--rojo),#ef5350);
+    color:white; text-decoration:none;
+    padding:14px 30px; border-radius:30px; font-weight:bold;
+}
+
+/* ===== ESTO ES DE MIS FOTOS DE TUPIZA, COCHABAMBA, SUCRE, etc. ===== */
+.hero-tupiza{
+    position:relative; margin-top:30px; height:430px;
+    border-radius:16px; overflow:hidden;
+    box-shadow:0 8px 25px rgba(0,0,0,.18);
+}
+.hero-tupiza img{width:100%; height:100%; object-fit:cover;}
+.hero-overlay{
+    position:absolute; inset:0;
+    background:linear-gradient(90deg, rgba(7,27,77,.88), rgba(7,27,77,.35), rgba(201,40,53,.20));
+}
+.hero-text{
+    position:absolute; left:50px; top:50%;
+    transform:translateY(-50%);
+    color:white; max-width:650px;
+}
+.hero-text h2{font-size:56px; margin-bottom:12px;}
+.hero-text h3{color:var(--dorado); font-size:25px; margin-bottom:15px;}
+.hero-text p{font-size:18px; line-height:1.7;}
+
+/* ===== ESTAS SON MIS SECCIONES BLANCAS, DONDE PONGO MI TEXTO ===== */
+.section{
+    margin-top:30px; background:white; padding:32px;
+    border-radius:14px; box-shadow:0 5px 20px rgba(0,0,0,.07);
+}
+.section h2{
+    color:var(--azul); font-size:26px; margin-bottom:25px;
+    display:flex; align-items:center; gap:12px;
+}
+.section h2::before{
+    content:""; width:5px; height:27px; background:var(--rojo); border-radius:5px; /* rayita roja que le puse yo antes del título */
+}
+.section p{color:#5f6368; line-height:1.7;}
+
+/* ===== ESTO ES MI GRILLA, PARA QUE MIS TARJETAS SE ACOMODEN SOLAS ===== */
+.grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:25px;}
+
+/* ===== ESTAS SON MIS TARJETAS, LAS DE DESTINOS ===== */
+.card{
+    background:white; border-radius:14px; overflow:hidden;
+    border:1px solid #e4e7eb; box-shadow:0 5px 15px rgba(0,0,0,.08);
+    transition:.3s;
+}
+.card:hover{transform:translateY(-8px); box-shadow:0 12px 25px rgba(0,0,0,.14);} /* esto lo puse para que se levante cuando paso el mouse */
+.card img{width:100%; height:190px; object-fit:cover; display:block;}
+.card h3{color:var(--azul); font-size:21px; padding:18px 18px 8px;}
+.card p{padding:0 18px 8px; color:#666; font-size:15px; line-height:1.6;}
+.card button{
+    width:calc(100% - 36px); margin:12px 18px 20px; padding:13px;
+    border:none; border-radius:8px;
+    background:linear-gradient(90deg,var(--azul2),var(--azul3)); /* color de mi botón, lo hice degradado */
+    color:white; font-size:15px; font-weight:bold; cursor:pointer; transition:.3s;
+}
+.card a{text-decoration:none;}
+
+/* ===== ESTO ES DE MIS HORARIOS, DONDE PUSE LAS HORAS CON EMOJIS ===== */
+.top{
+    margin-top:25px; background:white; padding:30px; border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+.tabla-horarios{width:100%; border-collapse:collapse; margin-top:20px;}
+.tabla-horarios th{
+    text-align:left; padding:12px 15px; background:var(--gris);
+    color:var(--azul); font-size:15px; border-radius:8px;
+}
+.hora-badge{
+    display:inline-block; padding:6px 14px; border-radius:20px;
+    font-weight:bold; font-size:14px; margin:4px;
+}
+.badge-am{background:#e0f2ff; color:#0d347f; border:1px solid #b6d9ff;} /* AM lo puse celeste */
+.badge-pm{background:#ffe0e0; color:#c92835; border:1px solid #ffb3b3;} /* PM lo puse rojito */
+
+/* ===== ESTO ES DE MI FORMULARIO DE COMPRAR PASAJE ===== */
+.formulario{
+    max-width:900px; margin:30px auto; background:white; padding:40px;
+    border-radius:20px; box-shadow:0 5px 20px rgba(0,0,0,.10);
+}
+.form-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+.campo{display:flex; flex-direction:column;}
+.campo.completo{grid-column:1 / 3;} /* esto lo puse para que el comentario ocupe todo el ancho */
+.campo label{color:var(--azul); font-weight:bold; margin-bottom:8px;}
+.campo input,.campo select,.campo textarea{
+    padding:13px 15px; border:2px solid #ddd; border-radius:10px;
+    font-size:16px; outline:none;
+}
+
+/* ===== ESTO ES PARA CELULAR, LO HICE PARA QUE NO SE VEA FEO EN MÓVIL ===== */
+/* Aquí puse lo del menú móvil, para que mis emojis se vean bien en celular */
+@media(max-width:900px){
+    .sidebar{position:relative; width:100%; height:auto; border-right:none; border-bottom:3px solid var(--dorado);}
+    .logo{display:flex; justify-content:center; gap:20px;}
+    .sidebar nav{display:flex; flex-wrap:wrap; justify-content:center;}
+    .sidebar a{margin:5px; font-size:14px; padding:10px 14px;}
+    .main{margin-left:0; padding:20px;}
+    .header h1{font-size:26px;}
+    .grid{grid-template-columns:1fr;}
+    .banner img{height:280px;}
+    .banner-text h2{font-size:28px;}
+}
+
+/* Esto es para mis fotos que a veces no cargan */
+.foto-placeholder img {width:100%; height:220px; object-fit:cover; border-radius:10px; display:block;}
